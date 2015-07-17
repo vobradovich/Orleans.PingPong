@@ -29,14 +29,14 @@ namespace Orleans.PingPong
             var results = new List<Task<ClientResult>>();
 
             for (var i = 0; i < numberOfClients; i++)
-            {
-                var destination = DestinationFactory.GetGrain(Guid.NewGuid());
+            {				
+				var destination = GrainClient.GrainFactory.GetGrain<IDestination>(Guid.NewGuid());
 
-                var client = ClientFactory.GetGrain(Guid.NewGuid());
+                var client = GrainClient.GrainFactory.GetGrain<IClient>(Guid.NewGuid());
                 await client.Initialize(destination, numberOfRepeatsPerClient);
 
                 var observer = new ClientObserver();
-                await client.Subscribe(ClientObserverFactory.CreateObjectReference(observer).Result);
+                await client.Subscribe(GrainClient.GrainFactory.CreateObjectReference<IClientObserver>(observer).Result);
                 
                 clients.Add(client);
                 observers.Add(observer); // to prevent GC collection of observer

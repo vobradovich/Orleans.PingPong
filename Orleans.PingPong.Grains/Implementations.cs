@@ -64,7 +64,7 @@ namespace Orleans.PingPong
     }
 
     public class Destination : Grain, IDestination
-    {
+	{
         public Task Ping(IClient @from, Message message)
         {
             from.Pong(this, message).Ignore();

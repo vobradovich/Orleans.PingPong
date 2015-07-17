@@ -18,7 +18,6 @@
 
 namespace Orleans.PingPong
 {
-    using Orleans.CodeGeneration;
     using Orleans;
     using System;
     using System.Runtime.InteropServices;

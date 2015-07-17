@@ -10,8 +10,8 @@ namespace Orleans.PingPong
     public class Message
     {}
 
-    public interface IClient : IGrain
-    {
+    public interface IClient : IGrainWithGuidKey
+	{
         Task Run();
         Task Pong(IDestination from, Message message);
         Task Initialize(IDestination actor, long repeats);
@@ -23,8 +23,8 @@ namespace Orleans.PingPong
         void Done(long pings, long pongs);
     }
 
-    public interface IDestination : IGrain
-    {
+    public interface IDestination : IGrainWithGuidKey
+	{
         Task Ping(IClient from, Message message);
     }
 }

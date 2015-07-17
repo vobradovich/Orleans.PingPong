@@ -29,52 +29,45 @@ namespace Orleans.PingPong
     using Orleans.PingPong;
     using Orleans;
     using Orleans.Runtime;
+    using Orleans.Core;
     
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Orleans-CodeGenerator", "1.0.8.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Orleans-CodeGenerator", "1.0.9.0")]
     [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
     public class ClientFactory
     {
         
 
-                        public static Orleans.PingPong.IClient GetGrain(long primaryKey)
+                        [System.Obsolete("This method has been deprecated. Please use GrainFactory.GetGrain<IClient> instead.")]
+                        public static IClient GetGrain(System.Guid primaryKey)
                         {
-                            return Cast(global::Orleans.CodeGeneration.GrainFactoryBase.MakeGrainReferenceInternal(typeof(Orleans.PingPong.IClient), 523268002, primaryKey));
+                            return Cast(global::Orleans.CodeGeneration.GrainFactoryBase.MakeGrainReferenceInternal(typeof(IClient), primaryKey));
                         }
 
-                        public static Orleans.PingPong.IClient GetGrain(long primaryKey, string grainClassNamePrefix)
+                        [System.Obsolete("This method has been deprecated. Please use GrainFactory.GetGrain<IClient> instead.")]
+                        public static IClient GetGrain(System.Guid primaryKey, string grainClassNamePrefix)
                         {
-                            return Cast(global::Orleans.CodeGeneration.GrainFactoryBase.MakeGrainReferenceInternal(typeof(Orleans.PingPong.IClient), 523268002, primaryKey, grainClassNamePrefix));
+                            return Cast(global::Orleans.CodeGeneration.GrainFactoryBase.MakeGrainReferenceInternal(typeof(IClient), primaryKey, grainClassNamePrefix));
                         }
 
-                        public static Orleans.PingPong.IClient GetGrain(System.Guid primaryKey)
-                        {
-                            return Cast(global::Orleans.CodeGeneration.GrainFactoryBase.MakeGrainReferenceInternal(typeof(Orleans.PingPong.IClient), 523268002, primaryKey));
-                        }
-
-                        public static Orleans.PingPong.IClient GetGrain(System.Guid primaryKey, string grainClassNamePrefix)
-                        {
-                            return Cast(global::Orleans.CodeGeneration.GrainFactoryBase.MakeGrainReferenceInternal(typeof(Orleans.PingPong.IClient), 523268002, primaryKey, grainClassNamePrefix));
-                        }
-
-            public static Orleans.PingPong.IClient Cast(global::Orleans.Runtime.IAddressable grainRef)
+            public static IClient Cast(global::Orleans.Runtime.IAddressable grainRef)
             {
                 
                 return ClientReference.Cast(grainRef);
             }
         
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("Orleans-CodeGenerator", "1.0.8.0")]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Orleans-CodeGenerator", "1.0.9.0")]
         [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
         [System.SerializableAttribute()]
-        [global::Orleans.CodeGeneration.GrainReferenceAttribute("Orleans.PingPong.Orleans.PingPong.IClient")]
+        [global::Orleans.CodeGeneration.GrainReferenceAttribute("Orleans.PingPong.IClient")]
         internal class ClientReference : global::Orleans.Runtime.GrainReference, global::Orleans.Runtime.IAddressable, Orleans.PingPong.IClient
         {
             
 
-            public static Orleans.PingPong.IClient Cast(global::Orleans.Runtime.IAddressable grainRef)
+            public static IClient Cast(global::Orleans.Runtime.IAddressable grainRef)
             {
                 
-                return (Orleans.PingPong.IClient) global::Orleans.Runtime.GrainReference.CastInternal(typeof(Orleans.PingPong.IClient), (global::Orleans.Runtime.GrainReference gr) => { return new ClientReference(gr);}, grainRef, 523268002);
+                return (IClient) global::Orleans.Runtime.GrainReference.CastInternal(typeof(IClient), (global::Orleans.Runtime.GrainReference gr) => { return new ClientReference(gr);}, grainRef, 523268002);
             }
             
             protected internal ClientReference(global::Orleans.Runtime.GrainReference reference) : 
@@ -99,7 +92,7 @@ namespace Orleans.PingPong
             {
                 get
                 {
-                    return "Orleans.PingPong.Orleans.PingPong.IClient";
+                    return "Orleans.PingPong.IClient";
                 }
             }
             
@@ -160,9 +153,9 @@ global::Orleans.CodeGeneration.GrainFactoryBase.CheckGrainObserverParamInternal(
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Orleans-CodeGenerator", "1.0.8.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Orleans-CodeGenerator", "1.0.9.0")]
     [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
-    [global::Orleans.CodeGeneration.MethodInvokerAttribute("Orleans.PingPong.Orleans.PingPong.IClient", 523268002)]
+    [global::Orleans.CodeGeneration.MethodInvokerAttribute("Orleans.PingPong.IClient", 523268002)]
     internal class ClientMethodInvoker : global::Orleans.CodeGeneration.IGrainMethodInvoker
     {
         
@@ -235,13 +228,13 @@ global::Orleans.CodeGeneration.GrainFactoryBase.CheckGrainObserverParamInternal(
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Orleans-CodeGenerator", "1.0.8.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Orleans-CodeGenerator", "1.0.9.0")]
     [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
     public class ClientObserverFactory
     {
         
 
-            public static Orleans.PingPong.IClientObserver Cast(global::Orleans.Runtime.IAddressable grainRef)
+            public static IClientObserver Cast(global::Orleans.Runtime.IAddressable grainRef)
             {
                 
                 return ClientObserverReference.Cast(grainRef);
@@ -249,29 +242,29 @@ global::Orleans.CodeGeneration.GrainFactoryBase.CheckGrainObserverParamInternal(
 
         private static global::Orleans.CodeGeneration.IGrainMethodInvoker methodInvoker;
 
-        public async static System.Threading.Tasks.Task<Orleans.PingPong.IClientObserver> CreateObjectReference(Orleans.PingPong.IClientObserver obj)
+        public async static System.Threading.Tasks.Task<IClientObserver> CreateObjectReference(IClientObserver obj)
         {
             if (methodInvoker == null) methodInvoker = new ClientObserverMethodInvoker();
             return ClientObserverFactory.Cast(await global::Orleans.Runtime.GrainReference.CreateObjectReference(obj, methodInvoker));
         }
 
-        public static System.Threading.Tasks.Task DeleteObjectReference(Orleans.PingPong.IClientObserver reference)
+        public static System.Threading.Tasks.Task DeleteObjectReference(IClientObserver reference)
         {
             return global::Orleans.Runtime.GrainReference.DeleteObjectReference(reference);
         }
         
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("Orleans-CodeGenerator", "1.0.8.0")]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Orleans-CodeGenerator", "1.0.9.0")]
         [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
         [System.SerializableAttribute()]
-        [global::Orleans.CodeGeneration.GrainReferenceAttribute("Orleans.PingPong.Orleans.PingPong.IClientObserver")]
+        [global::Orleans.CodeGeneration.GrainReferenceAttribute("Orleans.PingPong.IClientObserver")]
         internal class ClientObserverReference : global::Orleans.Runtime.GrainReference, global::Orleans.Runtime.IAddressable, Orleans.PingPong.IClientObserver
         {
             
 
-            public static Orleans.PingPong.IClientObserver Cast(global::Orleans.Runtime.IAddressable grainRef)
+            public static IClientObserver Cast(global::Orleans.Runtime.IAddressable grainRef)
             {
                 
-                return (Orleans.PingPong.IClientObserver) global::Orleans.Runtime.GrainReference.CastInternal(typeof(Orleans.PingPong.IClientObserver), (global::Orleans.Runtime.GrainReference gr) => { return new ClientObserverReference(gr);}, grainRef, 1126410990);
+                return (IClientObserver) global::Orleans.Runtime.GrainReference.CastInternal(typeof(IClientObserver), (global::Orleans.Runtime.GrainReference gr) => { return new ClientObserverReference(gr);}, grainRef, 1126410990);
             }
             
             protected internal ClientObserverReference(global::Orleans.Runtime.GrainReference reference) : 
@@ -296,7 +289,7 @@ global::Orleans.CodeGeneration.GrainFactoryBase.CheckGrainObserverParamInternal(
             {
                 get
                 {
-                    return "Orleans.PingPong.Orleans.PingPong.IClientObserver";
+                    return "Orleans.PingPong.IClientObserver";
                 }
             }
             
@@ -338,9 +331,9 @@ global::Orleans.CodeGeneration.GrainFactoryBase.CheckGrainObserverParamInternal(
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Orleans-CodeGenerator", "1.0.8.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Orleans-CodeGenerator", "1.0.9.0")]
     [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
-    [global::Orleans.CodeGeneration.MethodInvokerAttribute("Orleans.PingPong.Orleans.PingPong.IClientObserver", 1126410990)]
+    [global::Orleans.CodeGeneration.MethodInvokerAttribute("Orleans.PingPong.IClientObserver", 1126410990)]
     internal class ClientObserverMethodInvoker : global::Orleans.CodeGeneration.IGrainMethodInvoker
     {
         
@@ -401,50 +394,42 @@ global::Orleans.CodeGeneration.GrainFactoryBase.CheckGrainObserverParamInternal(
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Orleans-CodeGenerator", "1.0.8.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Orleans-CodeGenerator", "1.0.9.0")]
     [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
     public class DestinationFactory
     {
         
 
-                        public static Orleans.PingPong.IDestination GetGrain(long primaryKey)
+                        [System.Obsolete("This method has been deprecated. Please use GrainFactory.GetGrain<IDestination> instead.")]
+                        public static IDestination GetGrain(System.Guid primaryKey)
                         {
-                            return Cast(global::Orleans.CodeGeneration.GrainFactoryBase.MakeGrainReferenceInternal(typeof(Orleans.PingPong.IDestination), 1662910789, primaryKey));
+                            return Cast(global::Orleans.CodeGeneration.GrainFactoryBase.MakeGrainReferenceInternal(typeof(IDestination), primaryKey));
                         }
 
-                        public static Orleans.PingPong.IDestination GetGrain(long primaryKey, string grainClassNamePrefix)
+                        [System.Obsolete("This method has been deprecated. Please use GrainFactory.GetGrain<IDestination> instead.")]
+                        public static IDestination GetGrain(System.Guid primaryKey, string grainClassNamePrefix)
                         {
-                            return Cast(global::Orleans.CodeGeneration.GrainFactoryBase.MakeGrainReferenceInternal(typeof(Orleans.PingPong.IDestination), 1662910789, primaryKey, grainClassNamePrefix));
+                            return Cast(global::Orleans.CodeGeneration.GrainFactoryBase.MakeGrainReferenceInternal(typeof(IDestination), primaryKey, grainClassNamePrefix));
                         }
 
-                        public static Orleans.PingPong.IDestination GetGrain(System.Guid primaryKey)
-                        {
-                            return Cast(global::Orleans.CodeGeneration.GrainFactoryBase.MakeGrainReferenceInternal(typeof(Orleans.PingPong.IDestination), 1662910789, primaryKey));
-                        }
-
-                        public static Orleans.PingPong.IDestination GetGrain(System.Guid primaryKey, string grainClassNamePrefix)
-                        {
-                            return Cast(global::Orleans.CodeGeneration.GrainFactoryBase.MakeGrainReferenceInternal(typeof(Orleans.PingPong.IDestination), 1662910789, primaryKey, grainClassNamePrefix));
-                        }
-
-            public static Orleans.PingPong.IDestination Cast(global::Orleans.Runtime.IAddressable grainRef)
+            public static IDestination Cast(global::Orleans.Runtime.IAddressable grainRef)
             {
                 
                 return DestinationReference.Cast(grainRef);
             }
         
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("Orleans-CodeGenerator", "1.0.8.0")]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Orleans-CodeGenerator", "1.0.9.0")]
         [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
         [System.SerializableAttribute()]
-        [global::Orleans.CodeGeneration.GrainReferenceAttribute("Orleans.PingPong.Orleans.PingPong.IDestination")]
+        [global::Orleans.CodeGeneration.GrainReferenceAttribute("Orleans.PingPong.IDestination")]
         internal class DestinationReference : global::Orleans.Runtime.GrainReference, global::Orleans.Runtime.IAddressable, Orleans.PingPong.IDestination
         {
             
 
-            public static Orleans.PingPong.IDestination Cast(global::Orleans.Runtime.IAddressable grainRef)
+            public static IDestination Cast(global::Orleans.Runtime.IAddressable grainRef)
             {
                 
-                return (Orleans.PingPong.IDestination) global::Orleans.Runtime.GrainReference.CastInternal(typeof(Orleans.PingPong.IDestination), (global::Orleans.Runtime.GrainReference gr) => { return new DestinationReference(gr);}, grainRef, 1662910789);
+                return (IDestination) global::Orleans.Runtime.GrainReference.CastInternal(typeof(IDestination), (global::Orleans.Runtime.GrainReference gr) => { return new DestinationReference(gr);}, grainRef, 1662910789);
             }
             
             protected internal DestinationReference(global::Orleans.Runtime.GrainReference reference) : 
@@ -469,7 +454,7 @@ global::Orleans.CodeGeneration.GrainFactoryBase.CheckGrainObserverParamInternal(
             {
                 get
                 {
-                    return "Orleans.PingPong.Orleans.PingPong.IDestination";
+                    return "Orleans.PingPong.IDestination";
                 }
             }
             
@@ -511,9 +496,9 @@ global::Orleans.CodeGeneration.GrainFactoryBase.CheckGrainObserverParamInternal(
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Orleans-CodeGenerator", "1.0.8.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Orleans-CodeGenerator", "1.0.9.0")]
     [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
-    [global::Orleans.CodeGeneration.MethodInvokerAttribute("Orleans.PingPong.Orleans.PingPong.IDestination", 1662910789)]
+    [global::Orleans.CodeGeneration.MethodInvokerAttribute("Orleans.PingPong.IDestination", 1662910789)]
     internal class DestinationMethodInvoker : global::Orleans.CodeGeneration.IGrainMethodInvoker
     {
         
@@ -574,7 +559,7 @@ global::Orleans.CodeGeneration.GrainFactoryBase.CheckGrainObserverParamInternal(
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Orleans-CodeGenerator", "1.0.8.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Orleans-CodeGenerator", "1.0.9.0")]
     [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
     [global::Orleans.CodeGeneration.RegisterSerializerAttribute()]
     internal class Orleans_PingPong_MessageSerialization
